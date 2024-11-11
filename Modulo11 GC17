@@ -1,0 +1,18 @@
+strinput = str(input())
+strinput = list(strinput)
+numinput = []
+length = len(strinput)
+for i in range(length):
+    numinput.append(int(strinput[i]))
+lastdigit = numinput[length-1]
+numinput.pop()
+sum = 0
+multipliers = []
+for i in range(length,1,-1):
+    multipliers.append(int(i))
+for i in range(0, length-1):
+    sum += numinput[i]*multipliers[i]
+if sum%11 == lastdigit:
+    print("Valid")
+else:
+    print("Invalid")
